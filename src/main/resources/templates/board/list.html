@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://tyhmeleaf.org">
+
+    <th:block th:replace="~{/layout/layout :: setContent( ~{this :: content } )}">
+
+        <th:block th:fragment="content">
+
+            <h1 th:text="${'BOARD'}"></h1>
+
+            <div class="bboard">
+                <table>
+                    <thead>
+                    <tr>번호</tr>
+                    <tr>제목</tr>
+                    <tr>작성자</tr>
+                    <tr>등록일</tr>
+                    <tr>조회수</tr>
+                    </thead>
+                </table>
+            </div>
+
+        </th:block>
+
+    </th:block>
