@@ -31,4 +31,7 @@ public class Board extends BaseEntity{
     //작성자
     @ManyToOne
     private Member writer;
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int hit;
 }

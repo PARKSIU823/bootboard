@@ -48,5 +48,9 @@ public class BoardDTO {
      * 수정일
      */
     private LocalDateTime modDate;
-    
+
+    /**
+     * 조회수
+     */
+    private int hit;
 }

@@ -23,6 +23,7 @@ public interface BoardService  {
                 .content(boardDTO.getContent())
                 .writer(Member.builder().mno(boardDTO.getWriter()).build())
                 .delYn(boardDTO.getDelYn())
+                .hit(boardDTO.getHit())
                 .build();
         return boardEntity;
     }
@@ -38,6 +39,7 @@ public interface BoardService  {
                 .delYn(boardEntity.getDelYn())
                 .regDate(boardEntity.getRegDate())
                 .modDate(boardEntity.getModDate())
+                .hit(boardEntity.getHit())
                 .build();
 
         return boardDTO;
