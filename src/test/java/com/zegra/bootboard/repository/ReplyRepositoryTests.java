@@ -33,7 +33,7 @@ public class ReplyRepositoryTests {
             Reply reply = Reply.builder()
                     .board(board)
                     .rtext("댓글 내용 어쩌구 " + i)
-                    .member(member)
+                    .member(Member.builder().mno(board.getWriter().getMno()).build())
                     .build();
 
             replyRepository.save(reply);
