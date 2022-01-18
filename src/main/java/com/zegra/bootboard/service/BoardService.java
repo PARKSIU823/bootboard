@@ -14,6 +14,9 @@ public interface BoardService  {
     //리스트
     PageResultDTO<BoardDTO, Board> getList(PageRequestDTO pageRequestDTO);
 
+    //조회
+    BoardDTO getBoard(Long bno);
+
     //등록, dto > entity 변환
     default Board dtoToEntity(BoardDTO boardDTO) {
 

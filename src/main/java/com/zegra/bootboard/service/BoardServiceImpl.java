@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.function.Function;
 
 @Service
@@ -58,5 +59,18 @@ public class BoardServiceImpl implements BoardService{
         Function<Board, BoardDTO> fn = (boardEntity -> entityToDTO(boardEntity));
 
         return new PageResultDTO<>(result, fn);
+    }
+
+    /**
+     * 게시글 조회
+     * @param bno
+     * @return
+     */
+    @Override
+    public BoardDTO getBoard(Long bno) {
+
+        Optional<Board> result = boardRepository.findById(bno);
+
+        return result.isPresent() ? entityToDTO(result.get()) : null;
     }
 }
