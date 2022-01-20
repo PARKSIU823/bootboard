@@ -7,9 +7,9 @@
 
     <h1>BOARD 등록 </h1>
 
-    <form th:action="@{/bboard/regist}" th:method="POST">
+    <form th:action="@{/bboard/regist}" th:method="post">
 
-      <div class="bboard">
+      <div class="bboard_regist">
         <input type="hidden" name="writer" th:value="24">
         <div>
           <label>제목</label>
@@ -17,15 +17,47 @@
         </div>
         <div>
           <label>내용</label>
-          <textarea name="content" rows="15" placeholder="제목을 입력하세요"></textarea>
+          <textarea name="content" rows="15" placeholder="내용 입력하세요"></textarea>
         </div>
       </div>
 
-      <div>
-        <button type="submit">등록</button>
+      <div class="btnArea">
+        <button type="button" class="submitButton">등록</button>
+        <button type="button" class="listButton">목록</button>
       </div>
     </form>
 
+    <script th:inline="javascript">
+
+      let registForm = $("form");
+
+      $(".submitButton").click(function () {
+        if($("input[name='title']").val() == null) {
+          alert("제목을 입력해주세요.");
+          $("input[name='title']").focus();
+          return false;
+        }
+        if($("textarea[name='content']").val() == null) {
+          alert("내용을 입력해 주세요");
+          $("textarea[name='content']").focus();
+          return false;
+        }
+        registForm.submit();
+      });
+
+      $(".listButton").click(function (){
+
+        let pageInfo = $("input[name='page']");
+
+        registForm.empty();
+        registForm.append(pageInfo);
+        registForm
+                .attr("action", "/bboard/list")
+                .attr("method", "get");
+
+        registForm.submit();
+      });
+    </script>
   </th:block>
 
 </th:block>

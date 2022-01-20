@@ -5,42 +5,51 @@
 
         <th:block th:fragment="content">
 
-            <h1 th:text="${'BOARD'}"></h1>
-            <a th:href="@{/bboard/regist}">등록</a>
+            <h1>BOARD</h1>
 
-            <div class="bboard">
-                <table>
-                    <thead>
-                    <tr>번호</tr>
-                    <tr>제목</tr>
-                    <tr>작성자</tr>
-                    <tr>등록일</tr>
-                    <tr>조회수</tr>
-                    </thead>
+            <div>
+                <div>
+                    <table class="bboard">
+                        <thead>
+                        <tr>
+                            <th class="tb_bno">번호</th>
+                            <td class="tb_title">제목</td>
+                            <td class="tb_writer">작성자</td>
+                            <td class="tb_regDate">등록일</td>
+                            <td class="tb_hit">조회수</td>
+                        </tr>
+                        </thead>
 
-                    <tbody>
-                    <tr th:each="dto : ${result.dtoList}">
-                        <th scope="row">[[${dto.bno}]]</th>
-                        <td><a th:href="@{/bboard/read(bno = ${dto.bno}, page=${result.pageNo})}">[[${dto.title}]]</a></td>
-                        <td>[[${dto.writer}]]</td>
-                        <td>[[${#temporals.format(dto.regDate, 'yyyy/MM/dd')}]]</td>
-                        <td>[[${dto.hit}]]</td>
-                    </tr>
-                    </tbody>
-                </table>
+                        <tbody>
+                        <tr th:each="dto : ${result.dtoList}">
+                            <th class="tb_bno"scope="row">[[${dto.bno}]]</th>
+                            <td class="tb_title"><a th:href="@{/bboard/read(bno = ${dto.bno}, page=${result.pageNo})}">[[${dto.title}]]</a></td>
+                            <td class="tb_writer">[[${dto.writer}]]</td>
+                            <td class="tb_regDate">[[${#temporals.format(dto.regDate, 'yyyy/MM/dd')}]]</td>
+                            <td class="tb_hit">[[${dto.hit}]]</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="btnArea">
+                    <button class="addButton"><a th:href="@{/bboard/regist}">등록</a></button>
+                </div>
 
                 <!-- page -->
-                <ul>
-                    <li th:if="${result.prevNo}">
-                        <a th:href="@{/bboard/list(page= ${result.startNo -1})}" tabindex="-1">이전</a>
-                    </li>
-                    <li th:each="page : ${result.pageList}">
-                        <a th:href="@{/bboard/list(page= ${page})}">[[${page}]]</a>
-                    </li>
-                    <li th:if="${result.nextNo}">
-                        <a th:href="@{/bboard/list(page= ${result.endNo +1})}">다음</a>
-                    </li>
-                </ul>
+                <div class="pageArea">
+                    <ul class="pageUl">
+                        <li th:if="${result.prevNo}">
+                            <a th:href="@{/bboard/list(page= ${result.startNo -1})}" tabindex="-1">이전</a>
+                        </li>
+                        <li class="pageLi" th:each="page : ${result.pageList}">
+                            <a th:href="@{/bboard/list(page= ${page})}">[[${page}]]</a>
+                        </li>
+                        <li th:if="${result.nextNo}">
+                            <a th:href="@{/bboard/list(page= ${result.endNo +1})}">다음</a>
+                        </li>
+                    </ul>
+                </div>
                 <!-- .page-->
 
             </div>

@@ -1,5 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Nanum+Gothic&family=Nanum+Pen+Script&display=swap');
 
-.h1{
-    font-family: 'Mochiy Pop P One', sans-serif;
-}
+h1{font-family: 'Mochiy Pop P One', sans-serif; color: #606962;}
+body {font-family: 'Nanum Gothic', sans-serif; color: #606962;}
+
+.bboard {width: 95%; height:95%; text-align: center; margin:auto; border-spacing: 0px;}
+.bboard a {text-decoration-line: none; color: #606962;}
+.bboard a:hover, a:active {color:#9BA89E;}
+.bboard thead {background-color: #BECFC2;}
+.bboard th, td { padding: 5px;}
+.bboard .tb_bno {width: 10%;}
+.bboard .tb_title {width: 55%;}
+.bboard .tb_writer {width: 12%;}
+.bboard .tb_regDate {width: 15%;}
+.bboard .tb_hit {dth: 8%;}
+.bboard tbody tr:nth-child(even) {background-color: #E9F2E9;}
+
+.bboard_regist input {border: none;}
+.bboard_regist .bno {width: 5%;}
+.bboard_regist .title {width: 75%;}
+.bboard_regist .hit {width: 10%;}
+.bboard_regist textarea{resize: none; width: 90%; border: none;}
+
+.bboard_read input {border: none;}
+.bboard_read .bno {width: 5%;}
+.bboard_read .title {width: 75%;}
+.bboard_read .hit {width: 10%;}
+.bboard_read textarea{resize: none; width: 90%; border: none;}
+
+.btnArea {margin-left: auto; margin-top: 10px;}
+.btnArea .addButton {width: 100px; padding:5px; color:#606962; background-color: #BECFC2; border: none; display: inline-block;}
+.btnArea .addButton a{text-decoration: none; color: #606962;}
+.btnArea .addButton:hover {background-color: #34626C; color: #E9F2E9;}
+
+.btnArea .listButton {width: 100px; padding:5px; color:#606962; background-color: #BECFC2; border: none; display: inline-block;}
+.btnArea .listButton a{text-decoration: none; color: #606962;}
+.btnArea .listButton:hover {background-color: #34626C; color: #E9F2E9;}
+
+.btnArea .submitButton {width: 100px; padding:5px; color:#606962; background-color: #BECFC2; border: none; display: inline-block;}
+.btnArea .submitButton a{text-decoration: none; color: #606962;}
+.btnArea .submitButton:hover {background-color: #34626C; color: #E9F2E9;}
+
+.pageArea .pageUl{list-style:none; margin:0; padding:0; text-align-all: center;}
+.pageArea .pageLi {margin-left: 10px; padding: 0; border : 0;float: left;}
+.pageArea .pageLi a {text-decoration: none; color:  #606962;}
+.pageArea .pageLi a:hover, a:active {color:#9BA89E;}
